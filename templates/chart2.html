@@ -7,6 +7,46 @@
     <title>Document</title>
 </head>
 <body>
-    h2 oashdfas h2
+    <button type="button" class="button" id="select" onclick="chartcalling()">차트보기</button>
+
+
+    <div>
+
+    </div>
+
+
+/////////////  받아오기만 가능 한가? 보내기 말고 
+    <script>
+    function chartcalling() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+                        
+              alert(1)
+              data = JSON.parse(this.responseText);
+              console.log(data);
+            
+            }
+        };
+        
+        xhttp.open("GET", "calling"); 
+        //xhttp.setRequestHeader('Content-Type', 'application/json');       
+        xhttp.send();
+                            
+      }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

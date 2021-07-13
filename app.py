@@ -7,20 +7,29 @@ app.config['JSON_AS_ASCII'] = False
 
 
 @app.route('/', methods=["GET"])
-def home():
+def start():
+    return render_template("adult_login.html")
+
+
+@app.route('/main', methods=["GET"])
+def main():
     return render_template("main.html")
 
 
 @app.route('/chart2', methods=["GET"])
+def move():
+    return render_template("chart2.html")
+
+
+@app.route('/calling', methods=["get"])
 def mchart():
     a = chart_dao()
-    # 여기서 DAO 에서 판다스 만들기
-    # mchart() == > 차트 만들기
+#     # 여기서 DAO 에서 판다스 만들기
+#     # mchart() == > 차트 만들기
     return a  # 에서 만든 차트 보내기??  가능?? 차트 정보 보내서 html 에서 google chart?
 
 
 # pandas 가서 차트 만들기
-
 # return render_template("chart2.html")
 
 
