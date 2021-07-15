@@ -6,7 +6,7 @@ import pandas as pd
 
 class chart_dao:
 
-    def chart2():
+    def chart2(self):
         #data = []
         conn = cx_Oracle.connect(user="SCOTT", password="TIGER", dsn="xe")
         cur = conn.cursor()
@@ -24,10 +24,10 @@ class chart_dao:
             d['temgap'] = row[2]
 
             v.append(d)  # 이미 존재하는 list의 마지막 요소로 저장(add)
-            print("-----------")
+            # print("-----------")
             # print(v)
         data = json.dumps(v)  # json 포멧으로 자동 변환
-        print(data)
+        # print(data)
         # df = pd.DataFrame(v)
         # print(df)
         # print(type(df))
@@ -47,8 +47,8 @@ class chart_dao:
 
         cur.close()
         conn.close()
-        print(data)
-        print("_________")
+        # print(data)
+        # print("_________")
         return data
 
 

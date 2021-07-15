@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>구글 차트만들기</h3> 
+    <button id="chart_btn" onclick="drawChart()">버튼</button>
+    <br><hr><br>
+    <div id="barchart" style="width: 900px; height: 300px;"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+   
+   
+     google.charts.load('visualization', '1', {packages: ['corechart']});
+
+        function drawChart(){
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Co2density', 'Temperature'],
+                ['07-21-2012',  1476,   .233062],
+                ['07-28-2012',  1651,   .253180],
+                ['08-04-2012',  2217,   .210645]
+            ]);
+    
+            var options = {
+                vAxis: {0: {format: '#,###'}, 1: {format: '#%'},
+                hAxis: { title: "Week", format: 'm/d/y'},
+                series: {
+                    0:{ type: "bars", targetAxisIndex: 0 },
+                    1: { type: "line", targetAxisIndex: 1}
+                    }
+                }
+            }    
+                var chart = new google.visualization.ComboChart(document.getElementById('barchart'));
+            
+                chart.draw(data, options);
+            
+        }            
+    
+    </script>
+    
+
+</body>
+</html>
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+   
+   
+     google.charts.load('visualization', '1', {packages: ['corechart']});
+
+        function drawChart(){
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Co2density', 'Temperature']]);
+    
+            var options = {
+                vAxis: {0: {format: '###.#'}, 1: {format: '#'},
+                hAxis: { title: "year", format: 'yyyy'},
+                series: {
+                    0:{ type: "bars", targetAxisIndex: 0 },
+                    1: { type: "line", targetAxisIndex: 1}
+                    }
+                }
+            }    
+                var chart = new google.visualization.ComboChart(document.getElementById('barchart'));
+            
+                chart.draw(data, options);
+            
+        }            
+    
+    </script>

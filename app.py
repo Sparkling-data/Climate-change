@@ -23,7 +23,8 @@ def move():
 
 @app.route('/calling', methods=["get"])
 def mchart():
-    a = chart_dao()
+
+    a = chart_dao().chart2()
 #     # 여기서 DAO 에서 판다스 만들기
 #     # mchart() == > 차트 만들기
     return a  # 에서 만든 차트 보내기??  가능?? 차트 정보 보내서 html 에서 google chart?
