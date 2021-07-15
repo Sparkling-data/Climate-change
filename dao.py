@@ -47,7 +47,7 @@ class chart_dao:
 
         cur.close()
         conn.close()
-        # print(data)
+        # print(data) asdfsadf sa
         # print("_________")
         return data
 
