@@ -9,18 +9,21 @@
 <body>
     <button type="button" class="button" id="select" onclick="chartcalling()">차트보기</button>
     <div>
-    <h3>CO2 밀도 증가와 년도 대비 기후증감</h3> 
+   
     <br><hr><br>
+    <h3><이산화탄소 밀도의 증가></h3>
     <div id="barchart" style="width: 900px; height: 300px;"></div>
     <h4>시간이 지남에 따라 CO2의 농도가 점점 증가하고 있다. (CO2 밀도 단위는 ppm(parts per million)) A.k milligrams per liter (mg/L)</h4>
     <br><hr><br>
+    <h3><전년대비 지구의 평균 온도 차의 증감></h3>
     <div id="schart" style="width: 900px; height: 300px;"></div>
     <h4> 시간이 지남에 따라 전 지구의 평균 온도가 점차 증가하고 있다.</h4>
     <br><hr><br>
-    <h3> 시간에 따른 해수면 높이와 온도의 변화</h3> 
+    <h3> <시간에 따른 해수면 높이와 온도의 변화></h3> 
     <div id="sealevel" style="width: 900px; height: 500px;"></div>
-    <h4> 해수면 온도가 올라가면서 해수면의 높이도 상승하는 것을 볼 수 있다.</h4>
+    <h4> 해수면 온도가 올라가면서 해수면의 높이도 상승하는 것을 볼 수 있다. (해수면 높이의 단위는 mm로 기준점은 1880년으로 그해 높이를 0으로 본다.</h4>
     <br><hr><br>
+    <h3><해수면 온도의 변화 확대></h3>
     <div id="seatem" style="width: 900px; height: 500px;"></div>
     <br><hr><br>
     
@@ -34,7 +37,7 @@
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                             
-                    alert(1)
+                   
                     console.log(this.responseText);
                     data=this.responseText
                     data = JSON.parse(this.responseText);
