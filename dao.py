@@ -27,7 +27,8 @@ class chart_dao:
             v.append(d)  # 이미 존재하는 list의 마지막 요소로 저장(add)
             # print("-----------")
             # print(v)
-        data = json.dumps(v)  # json 포멧으로 자동 변환
+        # json 포멧으로 자동 변환  # (v, ensure_ascii=False)  한글 지원
+        data = json.dumps(v)
         # print(data)
         # df = pd.DataFrame(v)
         # print(df)
@@ -101,5 +102,5 @@ class chart_dao:
         conn.close()
 
 
-if __name__ == "__main__":
-    chart_dao.chart2()
+# if __name__ == "__main__":
+#     chart_dao.chart2()
